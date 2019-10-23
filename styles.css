@@ -1,0 +1,421 @@
+.scrollContent {
+    position: absolute;
+    top: 110px;
+    display: block;
+    width: 100%;
+    height: 70%;
+    overflow-y: scroll;
+    z-index: -1;
+}
+.scrollContent::-webkit-scrollbar {
+  background: transparent;
+  width: 5px;
+}
+.scrollContent::-webkit-scrollbar-thumb {
+  background: red;
+}
+.top {
+  background: red;
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  border-bottom: 5px solid black;
+  animation-duration: 1.75s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes moveUp{
+  0%{
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+@keyframes moveDown{
+  0%{
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(200vh);
+  }
+}
+.bottom {
+  background: white;
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  bottom: 0;
+  z-index: -1;
+  border-top: 5px solid black;
+  animation-duration: 1.75s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.center {
+  background: white;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 100%;
+}
+.border {
+  position: absolute;
+  background: linear-gradient(to right, black, black, white);
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  top: 80%;
+  right: 48%;
+  animation-name: rotate;
+  animation-duration: .75s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes rotate {
+  0%{
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(180deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+body {
+  margin: 0;
+  background: #2c3539;
+  height: auto;
+  max-height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.availablePokemon {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  background: black;
+  height: 100px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0px 3px 6px black;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  z-index: -1;
+}
+.availablePokemon::-webkit-scrollbar {
+  background: transparent;
+  height: 5px;
+}
+.availablePokemon::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 100%;
+}
+.pokemon {
+  position: relative;
+  top: -6px;
+  width: 90px;
+  height: 80px;
+  background: rgba(100, 100, 100, 0.3);
+  margin: 10px;
+}
+.pokemon:hover {
+  background: rgba(100, 100, 100, 0.6);
+  cursor: pointer;
+}
+.displayPokemon {
+  width: 20%;
+  height: auto;
+  float: left;
+}
+.displayImage {
+  position: relative;
+  bottom: 90px;
+  left: 15%;
+  width: 200px;
+  height: auto;
+}
+.platform {
+  position: absolute;
+  top: 200px;
+  left: 100px;
+  width: 300px;
+  height: 40%;
+  background: #1e1e1e;
+  border-radius: 100%;
+  -webkit-transform-style: preserve-3d; 
+  -webkit-transform: rotateX(45deg);
+  transform-style: preserve-3d;
+  transform: rotateX(45deg);
+  perspective: 100px;
+  z-index: -2;
+}
+.pokemonInfo {
+  position: relative;
+  float: right;
+  width: 80%;
+  margin-right: 0;
+  padding-right: 0;
+}
+.displayGeneration {
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+}
+.displayInfo {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: 60%;
+  min-height: 300px;
+  background: black;
+  border: 2px solid red;
+  border-radius: 6px;
+  margin-right: 0;
+  padding-right: 0;
+  box-shadow: 3px 3px 6px black;
+  overflow: hidden;
+  z-index: -2;
+}
+.name {
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.idNumber {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  color: white;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  font-weight: bolder;
+}
+.type {
+  text-align: center;
+  font-family: sans-serif;
+  margin-top: 0;
+  padding-top: 0;
+  color: white;
+}
+#poison {
+  color: #aa42f4;
+}
+#water {
+  color: #3d9ff4;
+}
+#fire {
+  color: #ba332c;
+}
+#grass {
+  color: #27aa2b;
+}
+#bug {
+  color: #9aa327;
+}
+#normal {
+  color: #95968a;
+}
+#fighting {
+  color: #84652d;
+}
+#flying {
+  color: #2d95b5;
+}
+#ground {
+  color: #e0dc76;
+}
+#rock {
+  color: #969464;
+}
+#ghost {
+  color: #766496;
+}
+#electric {
+  color: #fff832;
+}
+#psychic {
+  color: #d356b2;
+}
+#ice {
+  color: #d356b2;
+}
+#dragon {
+  color: #8935ff;
+}
+#dark {
+  color: #403d44;
+}
+#steel {
+  color: #9e9da0;
+}
+#fairy {
+  color: #fac1ff;
+}
+.identity {
+  position: relative;
+  background: black;
+  width: 100%;
+  height: 20%;
+  box-shadow: 0px 6px 6px black;
+}
+.information {
+  width: 100%;
+  height: 80%;
+  background: #2c3539;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  z-index: -1;
+}
+.displayHtWt {
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+}
+.movesTitle{
+  color: white;
+  text-align: center;
+  margin-bottom: 0;
+  font-family: sans-serif;
+  color: red;
+}
+.movesList {
+  display: flex;
+  width: 60%;
+  flex-wrap: wrap;
+  color: white;
+  flex-direction: row;
+  margin: 0 auto;
+}
+.movesList li {
+  display: flex;
+  text-align: center;
+  margin: 15px;
+  list-style: none;
+  margin-bottom: 0;
+  margin-top: 5px;
+  font-family: sans-serif;
+}
+.movesList li::before {
+  content: '•';
+  margin-right: 5px;
+  color: red;
+}
+.movesList li:after {
+  content: '•';
+  margin-left: 5px;
+  color: red;
+}
+.gamesTitle {
+  width: 100%;
+  color: red;
+  text-align: center;
+  font-family: sans-serif;
+}
+.listGames {
+  position: relative;
+  width: 100%;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+}
+.listGames li{
+  list-style: none;
+}
+.lstGames li::before {
+  content: '•';
+  color: red;
+  text-align: center;
+}
+@media only screen and (max-width: 900px){
+  .platform {
+  left: 20px;
+  }
+}
+@media only screen and (max-width: 600px){
+  
+}
+
+.search {
+  position: fixed;
+  top: 110px;
+  background: red;
+  border-radius: 0 30px 30px 0;
+  width: 280px;
+  height: 70px;
+  transform: translateX(-220px);
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  z-index: -1;
+}
+.searchLabel {
+  position: relative;
+  float: right;
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  font-family: sans-serif;
+  color: white;
+  top: 10px;
+  transition-property: all;
+  transition-duration: .5s;
+  transition-timing-function: ease;
+}
+.searchLabel:hover{
+  color: black;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.searchIcon {
+  position: relative;
+  width: 25px;
+  float: right;
+  right: 10px;
+  top: 30%;
+  height: auto;
+  transition-property: all;
+  transition-duration: .5s;
+  transition-timing-function: ease;
+}
+
+.searchIcon:hover {
+  cursor: pointer;
+  right: 8px;
+  top: 28%;
+  width: 27px;
+  height: auto;
+}
+.searchBox {
+  position: relative;
+  top: 30%;
+  left: 7%;
+  border-radius: 6px;
+}
+.reset {
+  position: relative;
+  display: flex;
+  top: -6px;
+  width: 90px;
+  height: 80px;
+  background: rgba(100, 100, 100, 0.3);
+  margin: 10px;
+  font-size: 3em;
+  color: white;
+  text-align: center;
+}
+.reset:hover {
+  color: red;
+  cursor: pointer;
+}
+.resetSymbol {
+  position: relative;
+  margin: auto;
+}
